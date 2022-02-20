@@ -45,6 +45,7 @@ body{
         }
     }
     nav{
+        grid-area: nav;
         position: sticky;
         top: 1px;
         z-index: 3;
@@ -63,152 +64,130 @@ body{
                 }
             }
         }
+        section#productos{
+            grid-area: productos;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            align-items: center;
+            align-content: space-around;
+            justify-content: space-between;
+        }
+        #gridContacto {
+            display: grid;
+            grid-template-areas: 
+            "header header"
+            "nav nav "
+            "redes form "
+            "footer footer";
+            grid-template-columns: 1fr 1fr;
+            .gridForm{
+                grid-area: form;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                align-content: space-between;
+                padding: 50px;
+                }
+                .gridRedes{
+                    grid-area: redes;
+                    display: flex;
+                    align-content: space-around;
+                    justify-content: space-around;
+                    align-items: center;
+                    justify-items: center;
+                    padding: 50px;
+                    .imgRed{
+                        height: 2em;
+                        width: 2em;
+                    }
+                 }
+        }
+        #gridCarrito{
+                display: grid;
+                grid-template-areas: 
+                "header"
+                "nav"
+                "compra"
+                "footer";
+                .gridCompra{
+                    grid-area: compra;
+                    padding-left: 5%;
+                }
+            }
+        #gridPerfil{
+                display: grid;
+                grid-template-areas: 
+                "header"
+                "nav"
+                "usuario"
+                "footer";
+                .propaganda{
+                    grid-area: propaganda;
+                }
+                .gridUsuario{
+                    grid-area: usuario;
+                    height: 20em;
+                }
+                .bordered{
+                    display: inline-block;
+                    padding: 0.5%;
+                    border: solid black 1px;
+                }
+                .fotoPerfil{
+                    height: 20%;
+                    transition: all 0.6s;
+                    &:hover{
+                        height: 40%;
+                        background-color: green;
+                        position: relative ;
+                    }
+                    
+                }
+            }
+    .imgProducto{
+            height: 7em;
+    }
+               
     .carouselEjemplo{
         width: 100%;
     }
     }
-}
-
-
-
-
-
-/* GRID */
-
-
-#gridContacto {
-    display: grid;
-    grid-template-areas: 
-    "header header"
-    "nav nav "
-    "redes form "
-    "footer footer";
-    grid-template-columns: 1fr 1fr;
-}
-#gridCarrito{
+    footer{
         display: grid;
+        grid-area: footer;
+        background-color: #ffdde4 ;
         grid-template-areas: 
-        "header"
-        "nav"
-        "compra"
-        "footer";
-    }
-#gridPerfil{
-        display: grid;
-        grid-template-areas: 
-        "header"
-        "nav"
-        "usuario"
-        "footer";
-        .gridUsuario{
-            grid-area: usuario;
-            height: 20em;
+        "redes mapa links"
+        ;
+        grid-template-columns: 2fr 4fr 2fr;
+        justify-content: space-between;
+        align-items: center;
+        .redes{
+            grid-area: redes;
+            .imgRed{
+                height: 2em;
+                width: 2em;
+            }
         }
-    }
-
-    
-
-    
-    
-    
-    
-  
-
-/* Pseudoclases */
-
-a:hover{
-    color: blue;
-}
-
-
-.fotoPerfil{
-    height: 20%;
-    transition: all 0.6s;
-}
-.imgProducto{
-    height: 7em;
-}
-.fotoPerfil:hover{
-    height: 40%;
-    background-color: green;
-    position: relative ;
-}
-
-.bordered{
-    display: inline-block;
-    padding: 0.5%;
-    border: solid black 1px;
-}
-.gridCompra{
-    grid-area: compra;
-    padding-left: 5%;
-}
-
- .gridRedes{
-    grid-area: redes;
-    display: flex;
-    align-content: space-around;
-    justify-content: space-around;
-    align-items: center;
-    justify-items: center;
-    padding: 50px;
-    .imgRed{
-        height: 2em;
-        width: 2em;
-    }
- }
-.gridForm{
-    grid-area: form;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    align-content: space-between;
-    padding: 50px;
-    }
-nav{
-    grid-area: nav;
-}
-
-section#productos{
-    grid-area: productos;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    align-items: center;
-    align-content: space-around;
-    justify-content: space-between;
-}
-
-section#busqueda{
-    grid-area: busqueda;
-
-}
-.propaganda{
-    grid-area: propaganda;
-}
-
-footer{
-    display: grid;
-    grid-area: footer;
-    background-color: #ffdde4 ;
-    grid-template-areas: 
-    "redes mapa links"
-    ;
-    grid-template-columns: 2fr 4fr 2fr;
-    justify-content: space-between;
-    align-items: center;
-    .redes{
-        grid-area: redes;
-        .imgRed{
-            height: 2em;
-            width: 2em;
+        .mapa{
+        grid-area: mapa;
         }
+        .links{
+            grid-area: links;
+        }
+    
     }
-    .mapa{
-    grid-area: mapa;
+    a:hover{
+        color: blue;
     }
-    .links{
-        grid-area: links;
-    }
-
+    
 }
+
+
+
+
+
+
+
+

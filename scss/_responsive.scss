@@ -37,27 +37,20 @@
         grid-template-areas: 
         "logo buscar perfil";
         justify-content: space-between;
-        background-color: #ff0644;
         width: 100%;
     }
     .imgLogo{
         height: 3em;
     }
-    body{
-        background-color: blue;
-    }
 }
 
 /* TABLET */
 @media (min-width: 482px) and (max-width: 768px) {
-    body{
-        background-color: purple;
-    }
+
     nav{
         position: static;
     }
     .menu{
-        background-color: brown;
         font-size: 20px;
     }
     section#productos{
@@ -74,8 +67,3 @@
 
 /* TABLET APAISADA */
 
-@media (min-width: 768px) and (max-width: 992px) and (orientation: landscape) {
-    body{
-        background-color: brown;
-    }
-}
