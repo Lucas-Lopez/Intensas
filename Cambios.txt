@@ -1,0 +1,4 @@
+-Agregué el sitemap
+-Cambie las imagenes por imagenes comprimidas
+-Cambie los PNGs para que queden todos sin background
+-Agregué keywords y titles
