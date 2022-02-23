@@ -14,7 +14,7 @@
 @media (max-width: 481px) {
   #grid {
     display: grid;
-    grid-template-areas: " header" " nav" " propaganda" " productos" " footer";
+    grid-template-areas: " header" " nav" " propaganda" " productos" " footer";
     grid-template-columns: 1fr 8fr; }
   section#productos {
     justify-content: center; }
@@ -32,21 +32,15 @@
     display: grid;
     grid-template-areas: "logo buscar perfil";
     justify-content: space-between;
-    background-color: #ff0644;
     width: 100%; }
-  .imgLogo {
-    height: 3em; }
-  body {
-    background-color: blue; } }
+  .imgLogo, body .gridHeader .imgLogoBordered {
+    height: 3em; } }
 
 /* TABLET */
 @media (min-width: 482px) and (max-width: 768px) {
-  body {
-    background-color: purple; }
   nav {
     position: static; }
   .menu {
-    background-color: brown;
     font-size: 20px; }
   section#productos {
     justify-content: center; }
@@ -56,10 +50,6 @@
     display: none; } }
 
 /* TABLET APAISADA */
-@media (min-width: 768px) and (max-width: 992px) and (orientation: landscape) {
-  body {
-    background-color: brown; } }
-
 /* estilos generales */
 body {
   background-color: #ffb9d1;
@@ -77,15 +67,18 @@ body {
     align-items: center;
     background-color: #ff6f8a;
     width: 100%; }
-    body .gridHeader .imgLogo {
+    body .gridHeader .imgLogo, body .gridHeader .imgLogoBordered {
       height: 100px;
       animation-name: caida;
       animation-duration: 2s; }
+    body .gridHeader .imgLogoBordered {
+      border: solid black 3px; }
     body .gridHeader div.buscar {
       display: flex; }
       body .gridHeader div.buscar .buscarImg {
         height: 2em; }
   body nav {
+    grid-area: nav;
     position: sticky;
     top: 1px;
     z-index: 3;
@@ -101,103 +94,113 @@ body {
         color: #131212; }
         body nav .menu a:hover {
           color: blue; }
-    body nav .carouselEjemplo {
-      width: 100%; }
-
-/* GRID */
-#gridContacto {
-  display: grid;
-  grid-template-areas: "header header" "nav nav " "redes form " "footer footer";
-  grid-template-columns: 1fr 1fr; }
-
-#gridCarrito {
-  display: grid;
-  grid-template-areas: "header" "nav" "compra" "footer"; }
-
-#gridPerfil {
-  display: grid;
-  grid-template-areas: "header" "nav" "usuario" "footer"; }
-  #gridPerfil .gridUsuario {
-    grid-area: usuario;
-    height: 20em; }
-
-/* Pseudoclases */
-a:hover {
-  color: blue; }
-
-.fotoPerfil {
-  height: 20%;
-  transition: all 0.6s; }
-
-.imgProducto {
-  height: 7em; }
-
-.fotoPerfil:hover {
-  height: 40%;
-  background-color: green;
-  position: relative; }
-
-.bordered {
-  display: inline-block;
-  padding: 0.5%;
-  border: solid black 1px; }
-
-.gridCompra {
-  grid-area: compra;
-  padding-left: 5%; }
-
-.gridRedes {
-  grid-area: redes;
-  display: flex;
-  align-content: space-around;
-  justify-content: space-around;
-  align-items: center;
-  justify-items: center;
-  padding: 50px; }
-  .gridRedes .imgRed {
-    height: 2em;
-    width: 2em; }
-
-.gridForm {
-  grid-area: form;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  align-content: space-between;
-  padding: 50px; }
-
-nav {
-  grid-area: nav; }
-
-section#productos {
-  grid-area: productos;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  align-items: center;
-  align-content: space-around;
-  justify-content: space-between; }
-
-section#busqueda {
-  grid-area: busqueda; }
-
-.propaganda {
-  grid-area: propaganda; }
-
-footer {
-  display: grid;
-  grid-area: footer;
-  background-color: #ffdde4;
-  grid-template-areas: "redes mapa links";
-  grid-template-columns: 2fr 4fr 2fr;
-  justify-content: space-between;
-  align-items: center; }
-  footer .redes {
-    grid-area: redes; }
-    footer .redes .imgRed {
-      height: 2em;
-      width: 2em; }
-  footer .mapa {
-    grid-area: mapa; }
-  footer .links {
-    grid-area: links; }
+  body section#productos {
+    grid-area: productos;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    align-content: space-around;
+    justify-content: space-between; }
+    body section#productos .ejMixin1 {
+      color: blue;
+      font-size: 30px; }
+    body section#productos .ejMixin2 {
+      color: red;
+      font-size: 10px; }
+    body section#productos .ejMixin3 {
+      color: green;
+      font-size: 15px; }
+    body section#productos .ejMixin4 {
+      color: #522748;
+      font-size: 22px; }
+    body section#productos .ejMixin5 {
+      color: #359292;
+      font-size: 34px; }
+    body section#productos .ejMixin6 {
+      color: #269146;
+      font-size: 21px; }
+    body section#productos .ejMixin7 {
+      color: #8f2e2e;
+      font-size: 14px; }
+    body section#productos .ejMixin8 {
+      color: #205f33;
+      font-size: 10px; }
+  body #gridContacto {
+    display: grid;
+    grid-template-areas: "header header" "nav nav " "redes form " "footer footer";
+    grid-template-columns: 1fr 1fr; }
+    body #gridContacto .gridForm {
+      grid-area: form;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      align-content: space-between;
+      padding: 50px; }
+    body #gridContacto .gridRedes {
+      grid-area: redes;
+      display: flex;
+      align-content: space-around;
+      justify-content: space-around;
+      align-items: center;
+      justify-items: center;
+      padding: 50px; }
+      body #gridContacto .gridRedes .imgRed {
+        height: 2em;
+        width: 2em; }
+  body #gridCarrito {
+    display: grid;
+    grid-template-areas: "header" "nav" "compra" "footer"; }
+    body #gridCarrito .gridCompra {
+      grid-area: compra;
+      padding-left: 5%; }
+  body #gridPerfil {
+    display: grid;
+    grid-template-areas: "header" "nav" "usuario" "footer"; }
+    body #gridPerfil .propaganda {
+      grid-area: propaganda; }
+    body #gridPerfil .gridUsuario {
+      grid-area: usuario;
+      height: 20em; }
+    body #gridPerfil .bordered {
+      display: inline-block;
+      padding: 0.5%;
+      border: solid black 1px; }
+    body #gridPerfil .fotoPerfil {
+      height: 20%;
+      transition: all 0.6s; }
+      body #gridPerfil .fotoPerfil:hover {
+        height: 40%;
+        background-color: green;
+        position: relative; }
+  body .imgProducto {
+    height: 7em; }
+  body .carouselEjemplo {
+    width: 100%; }
+  body footer {
+    display: grid;
+    grid-area: footer;
+    background-color: #ffdde4;
+    grid-template-areas: "redes mapa links";
+    grid-template-columns: 2fr 4fr 2fr;
+    justify-content: space-between;
+    align-items: center; }
+    body footer .redes {
+      grid-area: redes; }
+      body footer .redes .imgRed {
+        height: 2em;
+        width: 2em; }
+      body footer .redes .borde-twitter {
+        border: solid 1px #10b6f8; }
+      body footer .redes .borde-facebook {
+        border: solid 1px #0e005a; }
+      body footer .redes .borde-mail {
+        border: solid 1px #353a3d; }
+      body footer .redes .borde-instagram {
+        border: solid 1px #f83f10; }
+    body footer .mapa {
+      grid-area: mapa; }
+    body footer .links {
+      grid-area: links; }
+  body a:hover {
+    color: blue; }
