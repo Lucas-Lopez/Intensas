@@ -78,36 +78,6 @@ body{
         align-items: center;
         align-content: space-around;
         justify-content: space-between;
-        @mixin texto($color, $tamanio){
-            color: $color;
-            font-size: $tamanio;
-        }
-        .ejMixin1{
-            @include texto(blue, 30px)
-        }
-        .ejMixin2{
-            @include texto(red, 10px)
-        }
-        .ejMixin3{
-            @include texto(green, 15px)
-        }
-        .ejMixin4{
-            @include texto(rgb(82, 39, 72), 22px)
-        }
-        .ejMixin5{
-            @include texto(rgb(53, 146, 146), 34px)
-        }
-        .ejMixin6{
-            @include texto(rgb(38, 145, 70), 21px)
-        }
-        .ejMixin7{
-            @include texto(rgb(143, 46, 46), 14px)
-        }
-        .ejMixin8{
-            @include texto(rgb(32, 95, 51), 10px)
-        }
-
-
     }
     #gridContacto {
         display: grid;
@@ -203,17 +173,6 @@ body{
             .imgRed{
                 height: 2em;
                 width: 2em;
-            }
-            $bordes:(
-                twitter: #10b6f8,
-                facebook: #0e005a,
-                mail: #353a3d,
-                instagram: #f83f10
-            );
-            @each $red, $redColor in $bordes{
-                .borde-#{$red} {
-                    border: solid 1px $redColor;
-                }
             }
         }
         .mapa{
