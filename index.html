@@ -8,6 +8,7 @@
     <meta name="keywords"               content="tienda, ropa, pantalones, remeras">
     <meta name="viewport"               content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="img/favicon.png" type="image/x-icon"> 
+    <script src="https://kit.fontawesome.com/18b572136b.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/destino.css">
 
@@ -16,17 +17,21 @@
 
 <body id="grid">
     <header class="gridHeader">
+      <section class="logo">
         <a href="index.html"><img src="img/logo.png" alt="" class="imgLogo"></a> 
-        <div class="buscar">
-          <form action="#" >
-            <input type="search" class="form-control rounded" placeholder="buscar" aria-label="Search" aria-describedby="search-addon" />
-            <button><img src="img/buscar.png" alt="" class="buscarImg"></button>
+      </section>
+      <section class="buscar">
+          <form action="#" class="buscarFlex">
+            <input type="search" class="busqueda" placeholder="Buscar..."/>
+            <button><i class="fa-solid fa-magnifying-glass fa-2xl	"></i></button>
           </form>
-        </div>
-        <section class="perfil">
-            <a href="perfil.html">  <img src="img/perfil.png"   alt="Link al perfil"    class="imgLogo"> </a>
-            <a href="carrito.html"> <img src="img/carrito.png"  alt="Link al carrito"  class="imgLogo"> </a>
-        </section>
+      </section>
+      <section class="perfil">
+        <a href="perfil.html" class="a">  <i class="fa-solid fa-user fa-5x"></i> </a>
+      </section>
+      <section class="carrito">
+        <a href="carrito.html"> <i class="fa-solid fa-cart-shopping fa-5x"></i> </a>
+      </section>
     </header>
 
     <nav class="gridNav">

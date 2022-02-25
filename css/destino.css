@@ -14,7 +14,7 @@
 @media (max-width: 481px) {
   #grid {
     display: grid;
-    grid-template-areas: " header" " nav" " propaganda" " productos" " footer";
+    grid-template-areas: " header" " nav" " propaganda" " productos" " footer";
     grid-template-columns: 1fr 8fr; }
   section#productos {
     justify-content: center; }
@@ -32,21 +32,15 @@
     display: grid;
     grid-template-areas: "logo buscar perfil";
     justify-content: space-between;
-    background-color: #ff0644;
     width: 100%; }
   .imgLogo {
-    height: 3em; }
-  body {
-    background-color: blue; } }
+    height: 3em; } }
 
 /* TABLET */
 @media (min-width: 482px) and (max-width: 768px) {
-  body {
-    background-color: purple; }
   nav {
     position: static; }
   .menu {
-    background-color: brown;
     font-size: 20px; }
   section#productos {
     justify-content: center; }
@@ -56,23 +50,19 @@
     display: none; } }
 
 /* TABLET APAISADA */
-@media (min-width: 768px) and (max-width: 992px) and (orientation: landscape) {
-  body {
-    background-color: brown; } }
-
 /* estilos generales */
 body {
   background-color: #ffb9d1;
   font-family: 'Playfair Display', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; }
   body #grid {
     display: grid;
-    grid-template-areas: "header" "nav" "propaganda" "productos" "footer";
-    grid-template-columns: 1fr 8fr; }
+    grid-template-areas: "header" "nav" "propaganda" "productos" "footer"; }
   body .gridHeader {
     grid-area: header;
     border: solid black 1px;
     display: grid;
-    grid-template-areas: "logo buscar perfil";
+    grid-template-areas: "logo buscar perfil carrito";
+    grid-template-columns: 1fr 6fr 1fr 1fr;
     justify-content: space-between;
     align-items: center;
     background-color: #ff6f8a;
@@ -81,11 +71,41 @@ body {
       height: 100px;
       animation-name: caida;
       animation-duration: 2s; }
-    body .gridHeader div.buscar {
-      display: flex; }
-      body .gridHeader div.buscar .buscarImg {
-        height: 2em; }
+    body .gridHeader .logo {
+      grid-area: logo; }
+    body .gridHeader .buscar {
+      grid-area: buscar; }
+      body .gridHeader .buscar .buscarFlex {
+        display: flex; }
+        body .gridHeader .buscar .buscarFlex button {
+          height: 3em;
+          width: 3em;
+          margin: 0px;
+          background-color: white;
+          border: none;
+          border-radius: 0 10px 10px 0;
+          border-left: none; }
+        body .gridHeader .buscar .buscarFlex .busqueda {
+          position: relative;
+          height: 3em;
+          width: 100%;
+          border: none;
+          border-radius: 10px 0 0 10px;
+          border-right: none; }
+        body .gridHeader .buscar .buscarFlex .buscarImg {
+          height: 2em; }
+    body .gridHeader .perfil {
+      grid-area: perfil;
+      padding-left: 25px; }
+      body .gridHeader .perfil a {
+        color: black; }
+    body .gridHeader .carrito {
+      grid-area: carrito;
+      padding-left: 15px; }
+      body .gridHeader .carrito a {
+        color: black; }
   body nav {
+    grid-area: nav;
     position: sticky;
     top: 1px;
     z-index: 3;
@@ -101,103 +121,128 @@ body {
         color: #131212; }
         body nav .menu a:hover {
           color: blue; }
-    body nav .carouselEjemplo {
+  body section#productos {
+    grid-area: productos;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    align-content: space-around;
+    justify-content: space-between; }
+  body #gridContacto {
+    display: grid;
+    grid-template-areas: "header header" "nav nav " "redes form " "footer footer";
+    grid-template-columns: 1fr 1fr; }
+    body #gridContacto .gridHeader {
+      grid-area: header;
+      border: solid black 1px;
+      display: grid;
+      grid-template-areas: "logo buscar perfil carrito";
+      grid-template-columns: 1fr 6fr 1fr 1fr;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #ff6f8a;
       width: 100%; }
-
-/* GRID */
-#gridContacto {
-  display: grid;
-  grid-template-areas: "header header" "nav nav " "redes form " "footer footer";
-  grid-template-columns: 1fr 1fr; }
-
-#gridCarrito {
-  display: grid;
-  grid-template-areas: "header" "nav" "compra" "footer"; }
-
-#gridPerfil {
-  display: grid;
-  grid-template-areas: "header" "nav" "usuario" "footer"; }
-  #gridPerfil .gridUsuario {
-    grid-area: usuario;
-    height: 20em; }
-
-/* Pseudoclases */
-a:hover {
-  color: blue; }
-
-.fotoPerfil {
-  height: 20%;
-  transition: all 0.6s; }
-
-.imgProducto {
-  height: 7em; }
-
-.fotoPerfil:hover {
-  height: 40%;
-  background-color: green;
-  position: relative; }
-
-.bordered {
-  display: inline-block;
-  padding: 0.5%;
-  border: solid black 1px; }
-
-.gridCompra {
-  grid-area: compra;
-  padding-left: 5%; }
-
-.gridRedes {
-  grid-area: redes;
-  display: flex;
-  align-content: space-around;
-  justify-content: space-around;
-  align-items: center;
-  justify-items: center;
-  padding: 50px; }
-  .gridRedes .imgRed {
-    height: 2em;
-    width: 2em; }
-
-.gridForm {
-  grid-area: form;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  align-content: space-between;
-  padding: 50px; }
-
-nav {
-  grid-area: nav; }
-
-section#productos {
-  grid-area: productos;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  align-items: center;
-  align-content: space-around;
-  justify-content: space-between; }
-
-section#busqueda {
-  grid-area: busqueda; }
-
-.propaganda {
-  grid-area: propaganda; }
-
-footer {
-  display: grid;
-  grid-area: footer;
-  background-color: #ffdde4;
-  grid-template-areas: "redes mapa links";
-  grid-template-columns: 2fr 4fr 2fr;
-  justify-content: space-between;
-  align-items: center; }
-  footer .redes {
-    grid-area: redes; }
-    footer .redes .imgRed {
-      height: 2em;
-      width: 2em; }
-  footer .mapa {
-    grid-area: mapa; }
-  footer .links {
-    grid-area: links; }
+      body #gridContacto .gridHeader .imgLogo {
+        height: 100px;
+        animation-name: caida;
+        animation-duration: 2s; }
+      body #gridContacto .gridHeader .logo {
+        grid-area: logo; }
+      body #gridContacto .gridHeader .buscar {
+        grid-area: buscar; }
+        body #gridContacto .gridHeader .buscar .buscarFlex {
+          display: flex; }
+          body #gridContacto .gridHeader .buscar .buscarFlex button {
+            height: 3em;
+            width: 3em;
+            margin: 0px;
+            background-color: white;
+            border: none;
+            border-radius: 0 10px 10px 0;
+            border-left: none; }
+          body #gridContacto .gridHeader .buscar .buscarFlex .busqueda {
+            position: relative;
+            height: 3em;
+            width: 100%;
+            border: none;
+            border-radius: 10px 0 0 10px;
+            border-right: none; }
+          body #gridContacto .gridHeader .buscar .buscarFlex .buscarImg {
+            height: 2em; }
+      body #gridContacto .gridHeader .perfil {
+        grid-area: perfil;
+        padding-left: 25px; }
+        body #gridContacto .gridHeader .perfil a {
+          color: black; }
+      body #gridContacto .gridHeader .carrito {
+        grid-area: carrito;
+        padding-left: 15px; }
+        body #gridContacto .gridHeader .carrito a {
+          color: black; }
+    body #gridContacto .gridForm {
+      grid-area: form;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      align-content: space-between;
+      padding: 50px; }
+    body #gridContacto .gridRedes {
+      grid-area: redes;
+      display: flex;
+      align-content: space-around;
+      justify-content: space-around;
+      align-items: center;
+      justify-items: center;
+      padding: 50px; }
+      body #gridContacto .gridRedes .imgRed {
+        height: 2em;
+        width: 2em; }
+  body #gridCarrito {
+    display: grid;
+    grid-template-areas: "header" "nav" "compra" "footer"; }
+    body #gridCarrito .gridCompra {
+      grid-area: compra;
+      padding-left: 5%; }
+  body #gridPerfil {
+    display: grid;
+    grid-template-areas: "header" "nav" "usuario" "footer"; }
+    body #gridPerfil .propaganda {
+      grid-area: propaganda; }
+    body #gridPerfil .gridUsuario {
+      grid-area: usuario;
+      height: 20em; }
+    body #gridPerfil .bordered {
+      display: inline-block;
+      padding: 0.5%;
+      border: solid black 1px; }
+    body #gridPerfil .fotoPerfil {
+      height: 20%;
+      transition: all 0.6s; }
+      body #gridPerfil .fotoPerfil:hover {
+        height: 40%;
+        background-color: green;
+        position: relative; }
+  body .imgProducto {
+    height: 7em; }
+  body .carouselEjemplo {
+    width: 100%; }
+  body footer {
+    display: grid;
+    grid-area: footer;
+    background-color: #ffdde4;
+    grid-template-areas: "redes mapa links";
+    grid-template-columns: 2fr 4fr 2fr;
+    justify-content: space-between;
+    align-items: center; }
+    body footer .redes {
+      grid-area: redes; }
+      body footer .redes .imgRed {
+        height: 2em;
+        width: 2em; }
+    body footer .mapa {
+      grid-area: mapa; }
+    body footer .links {
+      grid-area: links; }
+  body a:hover {
+    color: blue; }

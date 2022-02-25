@@ -20,14 +20,14 @@ body{
         "propaganda"
         "productos"
         "footer";
-        grid-template-columns: 1fr 8fr;
     }
     .gridHeader {
         grid-area: header;
         border: solid black 1px;
         display: grid;
         grid-template-areas: 
-        "logo buscar perfil";
+        "logo buscar perfil carrito";
+        grid-template-columns: 1fr 6fr 1fr 1fr;
         justify-content: space-between;
         align-items: center;
         background-color: #ff6f8a;
@@ -36,18 +36,53 @@ body{
             height: 100px;
             animation-name: caida;
            animation-duration: 2s;
-           }
-        .imgLogoBordered{
-            @extend .imgLogo;
-            border: solid black 3px;
-        }
-        div.buscar{
-            display: flex;
+                }
+        .logo{
+            grid-area: logo;
+            
+            }
+        .buscar{
+            grid-area: buscar;
+            .buscarFlex{
+                display: flex;
+            button{
+                height: 3em;
+                width: 3em;
+                margin: 0px;
+                background-color: white;
+                border: none;
+                border-radius: 0 10px 10px 0;
+                border-left: none;
+            }
+            .busqueda{
+                position: relative;
+                height: 3em;
+                width: 100%;
+                border: none;
+                border-radius: 10px 0 0 10px;
+                border-right: none;
+                    }
             .buscarImg{
                 height: 2em;
+                    }
+        
+        }
+        }
+        .perfil{
+            grid-area: perfil;
+            padding-left: 25px;
+            a{
+                color: black;
             }
         }
-    }
+        .carrito{
+            grid-area: carrito;
+            padding-left: 15px;
+            a{
+                color: black;
+            }
+            } 
+        }
     nav{
         grid-area: nav;
         position: sticky;
@@ -79,6 +114,7 @@ body{
         align-content: space-around;
         justify-content: space-between;
     }
+    
     #gridContacto {
         display: grid;
         grid-template-areas: 
@@ -87,6 +123,68 @@ body{
         "redes form "
         "footer footer";
         grid-template-columns: 1fr 1fr;
+        .gridHeader {
+            grid-area: header;
+            border: solid black 1px;
+            display: grid;
+            grid-template-areas: 
+            "logo buscar perfil carrito";
+            grid-template-columns: 1fr 6fr 1fr 1fr;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #ff6f8a;
+            width: 100%;
+            .imgLogo{
+                height: 100px;
+                animation-name: caida;
+               animation-duration: 2s;
+                    }
+            .logo{
+                grid-area: logo;
+                
+                }
+            .buscar{
+                grid-area: buscar;
+                .buscarFlex{
+                    display: flex;
+                button{
+                    height: 3em;
+                    width: 3em;
+                    margin: 0px;
+                    background-color: white;
+                    border: none;
+                    border-radius: 0 10px 10px 0;
+                    border-left: none;
+                }
+                .busqueda{
+                    position: relative;
+                    height: 3em;
+                    width: 100%;
+                    border: none;
+                    border-radius: 10px 0 0 10px;
+                    border-right: none;
+                        }
+                .buscarImg{
+                    height: 2em;
+                        }
+            
+            }
+            }
+            .perfil{
+                grid-area: perfil;
+                padding-left: 25px;
+                a{
+                    color: black;
+                }
+            }
+            .carrito{
+                grid-area: carrito;
+                padding-left: 15px;
+                a{
+                    color: black;
+                }
+                } 
+            }
         .gridForm{
             grid-area: form;
             display: flex;
@@ -109,6 +207,7 @@ body{
                 }
              }
     }
+   
     #gridCarrito{
             display: grid;
             grid-template-areas: 
