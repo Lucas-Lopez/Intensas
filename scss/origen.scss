@@ -6,6 +6,7 @@
 
 @import "animaciones";
 @import "responsive";
+@import "hamburger";
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 /* estilos generales */
 
@@ -16,7 +17,6 @@ body{
         display: grid;
         grid-template-areas: 
         "header"
-        "nav"
         "propaganda"
         "productos"
         "footer";
@@ -26,17 +26,23 @@ body{
         border: solid black 1px;
         display: grid;
         grid-template-areas: 
-        "logo buscar perfil carrito";
-        grid-template-columns: 1fr 6fr 1fr 1fr;
+        "hamburguer logo buscar perfil carrito";
+        grid-template-columns: 0.7fr 1fr 6fr 1fr 1fr;
         justify-content: space-between;
         align-items: center;
         background-color: #e92d53;
         width: 100%;
+        position: sticky;
+        top: 1px;
+        z-index: 3;
         .imgLogo{
             height: 5em;
             animation-name: caida;
            animation-duration: 2s;
                 }
+        .hamburguer{
+            grid-area: hamburguer;
+        }
         .logo{
             grid-area: logo;
             margin: 15px;
@@ -86,34 +92,7 @@ body{
             }
             } 
         }
-    nav{
-        grid-area: nav;
-        position: sticky;
-        top: 1px;
-        z-index: 3;
-        margin-bottom: 0px;
-        .menu{
-            background-color: #ffebeb;
-            font-size: 30px;
-            padding: 10px;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-around;
-            a{
-                color: rgb(19, 18, 18);
-                text-decoration: none;
-                padding-right:  25px;
-                padding-left:   25px;
-                &:hover{
-                    color: blue;
-                    text-decoration: underline;
-                    background-color: #f580d391;
-                    border-radius: 10px;
-                }
-            }
-        }
-        
-    }
+
     section#productos{
         grid-area: productos;
         display: flex;
@@ -123,7 +102,7 @@ body{
         align-content: space-around;
         justify-content: space-between;
     } 
-    body#gridContacto {
+    #gridContacto {
         display: grid;
         background-color: black;
         grid-template-areas: 

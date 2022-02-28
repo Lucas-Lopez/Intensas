@@ -50,27 +50,122 @@
     display: none; } }
 
 /* TABLET APAISADA */
+#menuToggle {
+  display: block;
+  position: relative;
+  left: 35px;
+  z-index: 1;
+  -webkit-user-select: none;
+  user-select: none; }
+
+#menuToggle a {
+  text-decoration: none;
+  color: #232323;
+  transition: color 0.3s ease; }
+
+#menuToggle a:hover {
+  color: tomato; }
+
+#menuToggle input {
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  cursor: pointer;
+  opacity: 0;
+  /* hide this */
+  z-index: 2;
+  /* and place it over the hamburger */
+  -webkit-touch-callout: none; }
+
+/*
+  * Just a quick hamburger
+  */
+#menuToggle i {
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  z-index: 1;
+  text-shadow: 0px 2px 3px #000000; }
+
+#menuToggle span:first-child {
+  transform-origin: 0% 0%; }
+
+#menuToggle span:nth-last-child(2) {
+  transform-origin: 0% 100%; }
+
+/* 
+  * Transform all the slices of hamburger
+  * into a crossmark.
+  */
+#menuToggle input:checked ~ i {
+  color: #ededed; }
+
+/*
+  * But let's hide the middle one.
+  */
+#menuToggle input:checked ~ span:nth-last-child(3) {
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2); }
+
+/*
+  * Make this absolute positioned
+  * at the top left of the screen
+  */
+#menu {
+  position: absolute;
+  width: 14em;
+  margin: -100px 0 0 -50px;
+  padding: 50px;
+  padding-top: 125px;
+  background: #ededed;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  /* to stop flickering of text in safari */
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1); }
+
+#menu li {
+  padding: 10px 0;
+  font-size: 22px; }
+
+/*
+  * And let's slide it in from the left
+  */
+#menuToggle input:checked ~ ul {
+  transform: none; }
+
 /* estilos generales */
 body {
   background-color: #ffffff;
   font-family: 'Playfair Display', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; }
   body #grid {
     display: grid;
-    grid-template-areas: "header" "nav" "propaganda" "productos" "footer"; }
+    grid-template-areas: "header" "propaganda" "productos" "footer"; }
   body .gridHeader {
     grid-area: header;
     border: solid black 1px;
     display: grid;
-    grid-template-areas: "logo buscar perfil carrito";
-    grid-template-columns: 1fr 6fr 1fr 1fr;
+    grid-template-areas: "hamburguer logo buscar perfil carrito";
+    grid-template-columns: 0.7fr 1fr 6fr 1fr 1fr;
     justify-content: space-between;
     align-items: center;
     background-color: #e92d53;
-    width: 100%; }
+    width: 100%;
+    position: sticky;
+    top: 1px;
+    z-index: 3; }
     body .gridHeader .imgLogo {
       height: 5em;
       animation-name: caida;
       animation-duration: 2s; }
+    body .gridHeader .hamburguer {
+      grid-area: hamburguer; }
     body .gridHeader .logo {
       grid-area: logo;
       margin: 15px; }
@@ -108,29 +203,6 @@ body {
       body .gridHeader .carrito a {
         color: white;
         text-shadow: 0px 2px 3px #000000; }
-  body nav {
-    grid-area: nav;
-    position: sticky;
-    top: 1px;
-    z-index: 3;
-    margin-bottom: 0px; }
-    body nav .menu {
-      background-color: #ffebeb;
-      font-size: 30px;
-      padding: 10px;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-around; }
-      body nav .menu a {
-        color: #131212;
-        text-decoration: none;
-        padding-right: 25px;
-        padding-left: 25px; }
-        body nav .menu a:hover {
-          color: blue;
-          text-decoration: underline;
-          background-color: #f580d391;
-          border-radius: 10px; }
   body section#productos {
     grid-area: productos;
     display: flex;
@@ -144,13 +216,6 @@ body {
     background-color: black;
     grid-template-areas: "header header" "nav nav " "redes form " "footer footer";
     grid-template-columns: 1fr 1fr; }
-    body #gridContacto .gridForm {
-      grid-area: form;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      align-content: space-between;
-      padding: 50px; }
     body #gridContacto .gridRedes {
       grid-area: redes;
       display: flex;
@@ -162,6 +227,13 @@ body {
       body #gridContacto .gridRedes .imgRed {
         height: 2em;
         width: 2em; }
+    body #gridContacto .gridForm {
+      grid-area: form;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      align-content: space-between;
+      padding: 50px; }
   body #gridCarrito {
     display: grid;
     grid-template-areas: "header" "nav" "compra" "footer"; }
