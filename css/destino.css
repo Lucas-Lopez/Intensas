@@ -144,9 +144,6 @@
 body {
   background-color: #ffffff;
   font-family: 'Playfair Display', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; }
-  body #grid {
-    display: grid;
-    grid-template-areas: "header" "propaganda" "productos" "footer"; }
   body .gridHeader {
     grid-area: header;
     border: solid black 1px;
@@ -203,7 +200,10 @@ body {
       body .gridHeader .carrito a {
         color: white;
         text-shadow: 0px 2px 3px #000000; }
-  body section#productos {
+  body #grid {
+    display: grid;
+    grid-template-areas: "header" "propaganda" "productos" "footer"; }
+  body section.productos {
     grid-area: productos;
     display: flex;
     flex-wrap: wrap;
@@ -211,29 +211,6 @@ body {
     align-items: center;
     align-content: space-around;
     justify-content: space-between; }
-  body #gridContacto {
-    display: grid;
-    background-color: black;
-    grid-template-areas: "header header" "nav nav " "redes form " "footer footer";
-    grid-template-columns: 1fr 1fr; }
-    body #gridContacto .gridRedes {
-      grid-area: redes;
-      display: flex;
-      align-content: space-around;
-      justify-content: space-around;
-      align-items: center;
-      justify-items: center;
-      padding: 50px; }
-      body #gridContacto .gridRedes .imgRed {
-        height: 2em;
-        width: 2em; }
-    body #gridContacto .gridForm {
-      grid-area: form;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      align-content: space-between;
-      padding: 50px; }
   body #gridCarrito {
     display: grid;
     grid-template-areas: "header" "nav" "compra" "footer"; }
@@ -282,3 +259,64 @@ body {
       grid-area: links; }
   body a:hover {
     color: blue; }
+
+#gridContacto {
+  display: grid;
+  grid-template-areas: "header header" "redes form " "footer footer";
+  grid-template-columns: 1fr 1fr;
+  /*background-image: url("file:///C:/Users/emanu/OneDrive/Escritorio/Lucas/Coder/HTML/proyecto final/img/bg.jpg");*/ }
+  #gridContacto .gridRedes {
+    grid-area: redes;
+    display: flex;
+    align-content: center;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    justify-items: center;
+    padding: 15px;
+    flex-direction: column; }
+    #gridContacto .gridRedes span.mensaje {
+      text-align: justify;
+      text-justify: inter-word;
+      font-size: x-large; }
+    #gridContacto .gridRedes span.logosRedes {
+      display: flex;
+      flex-direction: column;
+      align-content: space-between; }
+      #gridContacto .gridRedes span.logosRedes a {
+        text-decoration: none;
+        color: #000000; }
+        #gridContacto .gridRedes span.logosRedes a:hover {
+          color: blue;
+          text-decoration: underline; }
+      #gridContacto .gridRedes span.logosRedes .textoRedes {
+        padding: 10px;
+        font-size: xx-large;
+        font-weight: 100; }
+  #gridContacto .formContacto {
+    grid-area: form;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 75px;
+    justify-content: space-around; }
+    #gridContacto .formContacto .formWrap {
+      display: grid;
+      grid-template-areas: "nombre mail" "mensaje mensaje" "boton boton";
+      grid-template-columns: 1fr, 1fr; }
+      #gridContacto .formContacto .formWrap #name {
+        grid-area: nombre; }
+      #gridContacto .formContacto .formWrap #mail {
+        grid-area: mail; }
+      #gridContacto .formContacto .formWrap #message {
+        grid-area: mensaje; }
+      #gridContacto .formContacto .formWrap button {
+        grid-area: boton; }
+    #gridContacto .formContacto input, #gridContacto .formContacto select, #gridContacto .formContacto optgroup, #gridContacto .formContacto textarea {
+      margin: 5px;
+      border: 0px;
+      border-radius: 5px;
+      box-shadow: 0px 1px 1px 1px #535252; }
+    #gridContacto .formContacto button {
+      color: black;
+      background-color: #ffdde4;
+      margin: 5px; }

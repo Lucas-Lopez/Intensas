@@ -13,14 +13,6 @@
 body{
     background-color: #ffffff;
     font-family: 'Playfair Display', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    #grid {
-        display: grid;
-        grid-template-areas: 
-        "header"
-        "propaganda"
-        "productos"
-        "footer";
-    }
     .gridHeader {
         grid-area: header;
         border: solid black 1px;
@@ -93,7 +85,17 @@ body{
             } 
         }
 
-    section#productos{
+    #grid {
+        display: grid;
+        grid-template-areas: 
+        "header"
+        "propaganda"
+        "productos"
+        "footer";
+    }
+    
+    
+    section.productos{
         grid-area: productos;
         display: flex;
         flex-wrap: wrap;
@@ -102,38 +104,7 @@ body{
         align-content: space-around;
         justify-content: space-between;
     } 
-    #gridContacto {
-        display: grid;
-        background-color: black;
-        grid-template-areas: 
-        "header header"
-        "nav nav "
-        "redes form "
-        "footer footer";
-        grid-template-columns: 1fr 1fr;
-        .gridRedes{
-            grid-area: redes;
-            display: flex;
-            align-content: space-around;
-            justify-content: space-around;
-            align-items: center;
-            justify-items: center;
-            padding: 50px;
-            .imgRed{
-                height: 2em;
-                width: 2em;
-            }
-         }
-        .gridForm{
-            grid-area: form;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            align-content: space-between;
-            padding: 50px;
-            }
-            
-    }
+    
     #gridCarrito{
             display: grid;
             grid-template-areas: 
@@ -211,10 +182,93 @@ body{
     a:hover{
         color: blue;
     }
-    
+
+ 
 }
 
+   #gridContacto {
+        display: grid;
+        grid-template-areas: 
+        "header header"
+        "redes form "
+        "footer footer";
+        grid-template-columns: 1fr 1fr;
+        /*background-image: url("file:///C:/Users/emanu/OneDrive/Escritorio/Lucas/Coder/HTML/proyecto final/img/bg.jpg");*/
+        .gridRedes{
+            grid-area: redes;
+            display: flex;
+            align-content: center;
+            justify-content: space-evenly;
+            align-items: flex-start;
+            justify-items: center;
+            padding: 15px;
+            flex-direction: column;
+            span.mensaje{
+                text-align: justify;
+                text-justify: inter-word;
+                font-size: x-large;
 
+            }
+            span.logosRedes{
+                display: flex;
+                flex-direction: column;
+                align-content: space-between;
+                a{
+                    text-decoration: none;
+                    color: #000000;
+                    &:hover{
+                        color: blue;
+                        text-decoration: underline;
+                    }
+                }
+                .textoRedes{
+                    padding: 10px;
+                    font-size: xx-large;
+                    font-weight: 100;
+                }
+            }
+         }
+        .formContacto{
+            grid-area: form;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-left: 75px;
+            justify-content: space-around;
+            .formWrap{
+                display: grid;
+                grid-template-areas: 
+                "nombre mail"
+                "mensaje mensaje"
+                "boton boton";
+                grid-template-columns: 1fr, 1fr;
+                #name{
+                    grid-area: nombre;
+                }
+                #mail{
+                    grid-area: mail;
+                }
+                #message{
+                    grid-area: mensaje;
+                }
+                button{
+                    grid-area: boton;
+                }
+            }
+        input, select, optgroup, textarea{
+            margin: 5px;
+            border: 0px;
+            border-radius: 5px;
+            box-shadow: 0px 1px 1px 1px #535252;
+
+        }
+        button{
+            color: black;
+            background-color: #ffdde4;
+            margin: 5px;
+        }
+        }
+   }
 
 
 
