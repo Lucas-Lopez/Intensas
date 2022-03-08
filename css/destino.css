@@ -245,9 +245,7 @@ body {
 
 #gridContacto {
   display: grid;
-  grid-template-areas: "header header" "redes form " "footer footer";
-  grid-template-columns: 1fr 1fr;
-  /*background-image: url("file:///C:/Users/emanu/OneDrive/Escritorio/Lucas/Coder/HTML/proyecto final/img/bg.jpg");*/ }
+  grid-template-areas: "header header" "redes form " "footer footer"; }
   #gridContacto .gridRedes {
     grid-area: redes;
     display: flex;
@@ -310,17 +308,19 @@ footer {
   background-color: #bf2948;
   grid-template-areas: "logo redes formulario links";
   grid-template-columns: 1fr 2fr 4fr 2fr;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  width: 100%;
+  justify-items: start;
   align-items: center;
-  position: absolute;
-  width: 100%; }
+  bottom: 0px; }
   footer .imgLogo {
     height: 5em;
-    margin-left: 7px; }
+    margin-left: 7px;
+    border: solid black 2px; }
   footer .redes {
     grid-area: redes; }
     footer .redes a {
-      color: black; }
+      color: white; }
       footer .redes a:hover {
         color: blue; }
   footer .formulario {
@@ -354,7 +354,8 @@ footer {
   footer .links {
     grid-area: links; }
     footer .links a {
-      color: #ffffff; }
+      color: #ffffff;
+      text-decoration: none; }
       footer .links a:hover {
         color: blue;
         text-decoration: underline; }
