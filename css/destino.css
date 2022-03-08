@@ -240,23 +240,6 @@ body {
     height: 7em; }
   body .carouselEjemplo {
     width: 100%; }
-  body footer {
-    display: grid;
-    grid-area: footer;
-    background-color: #ffdde4;
-    grid-template-areas: "redes mapa links";
-    grid-template-columns: 2fr 4fr 2fr;
-    justify-content: space-between;
-    align-items: center; }
-    body footer .redes {
-      grid-area: redes; }
-      body footer .redes .imgRed {
-        height: 2em;
-        width: 2em; }
-    body footer .mapa {
-      grid-area: mapa; }
-    body footer .links {
-      grid-area: links; }
   body a:hover {
     color: blue; }
 
@@ -320,3 +303,58 @@ body {
       color: black;
       background-color: #ffdde4;
       margin: 5px; }
+
+footer {
+  display: grid;
+  grid-area: footer;
+  background-color: #bf2948;
+  grid-template-areas: "logo redes formulario links";
+  grid-template-columns: 1fr 2fr 4fr 2fr;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  width: 100%; }
+  footer .imgLogo {
+    height: 5em;
+    margin-left: 7px; }
+  footer .redes {
+    grid-area: redes; }
+    footer .redes a {
+      color: black; }
+      footer .redes a:hover {
+        color: blue; }
+  footer .formulario {
+    grid-area: formulario;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 75px;
+    justify-content: space-around; }
+    footer .formulario .formWrap {
+      display: grid;
+      grid-template-areas: "nombre mail" "mensaje mensaje" "boton boton";
+      grid-template-columns: 1fr, 1fr; }
+      footer .formulario .formWrap #name {
+        grid-area: nombre; }
+      footer .formulario .formWrap #mail {
+        grid-area: mail; }
+      footer .formulario .formWrap #message {
+        grid-area: mensaje; }
+      footer .formulario .formWrap button {
+        grid-area: boton; }
+    footer .formulario input, footer .formulario select, footer .formulario optgroup, footer .formulario textarea {
+      margin: 5px;
+      border: 0px;
+      border-radius: 5px;
+      box-shadow: 0px 1px 1px 1px #535252; }
+    footer .formulario button {
+      color: black;
+      background-color: #ffdde4;
+      margin: 5px; }
+  footer .links {
+    grid-area: links; }
+    footer .links a {
+      color: #ffffff; }
+      footer .links a:hover {
+        color: blue;
+        text-decoration: underline; }
