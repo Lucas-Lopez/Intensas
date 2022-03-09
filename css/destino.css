@@ -63,8 +63,14 @@
   color: #232323;
   transition: color 0.3s ease; }
 
-#menuToggle a:hover {
-  color: tomato; }
+#menuToggle a:hover li:hover {
+  color: black;
+  text-decoration: underline;
+  background-color: #e374745c;
+  border-radius: 10px;
+  width: 98px;
+  height: 54px;
+  position: relative; }
 
 #menuToggle input {
   display: block;
@@ -312,7 +318,8 @@ footer {
   width: 100%;
   justify-items: start;
   align-items: center;
-  bottom: 0px; }
+  bottom: 0px;
+  margin-top: 16px; }
   footer .imgLogo {
     height: 5em;
     margin-left: 7px;
@@ -359,3 +366,46 @@ footer {
       footer .links a:hover {
         color: blue;
         text-decoration: underline; }
+
+.gridPerfil {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center; }
+  .gridPerfil .wrapDatos {
+    display: block;
+    background-color: #ffbebe80;
+    width: 60em;
+    margin: 10px;
+    padding: 20px; }
+    .gridPerfil .wrapDatos button {
+      background-color: #ffffff00;
+      border: none; }
+      .gridPerfil .wrapDatos button:hover {
+        color: blue; }
+    .gridPerfil .wrapDatos .titulo {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 14px;
+      font-size: 23px;
+      font-weight: 1000; }
+    .gridPerfil .wrapDatos .item {
+      font-size: 16px;
+      color: blue;
+      font-weight: 500; }
+      .gridPerfil .wrapDatos .item.derecha {
+        color: black; }
+    .gridPerfil .wrapDatos .itemWrap {
+      display: flex;
+      font-size: 14px;
+      margin: 0 0 15px;
+      justify-content: space-between; }
+    .gridPerfil .wrapDatos .derecha {
+      text-align: right; }
+
+.gridCompra .compra {
+  display: flex; }
+  .gridCompra .compra .imgCompra {
+    height: 10em; }
+  .gridCompra .compra .texto {
+    display: block; }

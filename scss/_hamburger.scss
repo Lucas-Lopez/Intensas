@@ -19,9 +19,15 @@
    transition: color 0.3s ease;
  }
  
- #menuToggle a:hover
+ #menuToggle a:hover li:hover
  {
-   color: tomato;
+  color: black;
+  text-decoration: underline;
+  background-color: #e374745c;
+  border-radius: 10px;
+  width: 98px;
+  height: 54px;
+  position: relative;
  }
  
  

@@ -245,7 +245,7 @@ body{
         }
    }
 
-
+   
    footer{
     display: grid;
     grid-area: footer;
@@ -257,6 +257,7 @@ body{
     justify-items: start;
     align-items: center;
     bottom: 0px;
+    margin-top: 16px;
     .imgLogo{
         height: 5em;
         margin-left: 7px;
@@ -325,5 +326,61 @@ body{
 
 }
 
+    .gridPerfil{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        .wrapDatos{
+            display: block;
+            background-color: #ffbebe80;
+            width: 60em;
+            margin: 10px;
+            padding: 20px;
+            button{
+                background-color: #ffffff00;
+                border: none;
+                &:hover{
+                    color:blue;
+                }
+            }
+            .titulo{
+                display: flex;
+                justify-content: space-between;
+                margin-top: 14px;
+                font-size: 23px;
+                font-weight: 1000;
+            }
+            .item{
+                font-size: 16px;
+                color: blue;
+                font-weight: 500;
+                &.derecha{
+                    color: black;
+                }
+            }
+            .itemWrap{
+                display: flex;
+                font-size: 14px;
+                margin: 0 0 15px;
+                justify-content: space-between;
+            }
+            .derecha{
+                text-align: right;
+            }
+            
+        }
+        
+    }
 
-
+    .gridCompra{
+        .compra{
+            display: flex;
+            .imgCompra{
+                height: 10em;
+            }
+            .texto{
+                display: block;
+            }
+        }
+    }
