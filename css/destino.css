@@ -259,11 +259,11 @@ body {
       background-color: #ffdde4;
       margin: 5px; }
 
-body#gridProductos {
+#gridProductos {
   display: grid;
   grid-template-areas: "header header" "sidebar productos" "footer footer";
   grid-template-columns: 1fr 5fr; }
-  body#gridProductos div#sidebar {
+  #gridProductos div#sidebar {
     grid-area: sidebar;
     margin-top: 20px;
     padding-left: 13px; }
