@@ -429,7 +429,7 @@ footer {
 
 /* RESPONSIVE */
 /* Smartphone */
-@media (max-width: 481px) {
+@media only screen and (max-width: 481px) {
   body section.productos {
     justify-content: center; }
   body .gridHeader {
@@ -491,19 +491,17 @@ footer {
     margin: 0; }
     .gridCompra .finCompra .wrapCompra .final {
       font-size: 16px; }
-  footer {
-    position: absolute; }
-    footer .imgLogo {
-      height: 4em; }
-    footer .redes {
-      display: flex;
-      flex-wrap: wrap;
-      margin-left: 1.5em; }
-      footer .redes i {
-        font-size: 2em; }
-    footer .formulario {
-      margin-left: 0px; }
-      footer .formulario input, footer .formulario select, footer .formulario optgroup, footer .formulario textarea {
-        width: 4em; }
-      footer .formulario .formWrap #message {
-        width: 9em; } }
+  footer .imgLogo {
+    height: 4em; }
+  footer .redes {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 1.5em; }
+    footer .redes i {
+      font-size: 2em; }
+  footer .formulario {
+    margin-left: 0px; }
+    footer .formulario input, footer .formulario select, footer .formulario optgroup, footer .formulario textarea {
+      width: 4em; }
+    footer .formulario .formWrap #message {
+      width: 9em; } }

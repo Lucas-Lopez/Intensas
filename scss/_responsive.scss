@@ -2,7 +2,7 @@
     
     /* Smartphone */
     
-@media (max-width: 481px)  {
+@media only screen and (max-width: 481px)  {
     body{        
         section.productos{
             justify-content: center;
@@ -100,7 +100,6 @@
             }
         }
         footer{
-            position: absolute;
                 .imgLogo{
                     height: 4em;
                 }
