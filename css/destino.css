@@ -504,4 +504,8 @@ footer {
     footer .formulario input, footer .formulario select, footer .formulario optgroup, footer .formulario textarea {
       width: 4em; }
     footer .formulario .formWrap #message {
-      width: 9em; } }
+      width: 9em; }
+  #gridProductos div#sidebar {
+    font-size: 10px; }
+    #gridProductos div#sidebar h5.font-weight-semi-bold.mb-4 {
+      font-size: 0.90rem; } }

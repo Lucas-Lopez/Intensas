@@ -4506,6 +4506,11 @@ textarea.form-control-lg {
   border-radius: 0.25rem;
 }
 
+@media only screen and (max-width: 481px)  {
+          .card{
+              width: 8rem;
+          }
+        }
 .card > hr {
   margin-right: 0;
   margin-left: 0;
