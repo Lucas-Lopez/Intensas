@@ -4,8 +4,6 @@
 }
 
 
-@import "animaciones";
-@import "responsive";
 @import "hamburger";
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 /* estilos generales */
@@ -29,8 +27,6 @@ body{
         z-index: 3;
         .imgLogo{
             height: 5em;
-            animation-name: caida;
-           animation-duration: 2s;
                 }
         .hamburguer{
             grid-area: hamburguer;
@@ -96,6 +92,7 @@ body{
     }
     
     
+    
     section.productos{
         grid-area: productos;
         display: flex;
@@ -103,7 +100,7 @@ body{
         flex-direction: row;
         align-items: center;
         align-content: space-around;
-        justify-content: space-between;
+        justify-content: space-around;
     } 
     
     #gridCarrito{
@@ -245,7 +242,21 @@ body{
         }
    }
 
-   
+   body#gridProductos {
+    display: grid;
+    grid-template-areas: 
+    "header header"
+    "sidebar productos"
+    "footer footer";
+    grid-template-columns: 1fr 5fr;
+        div#sidebar{
+        grid-area: sidebar;
+        margin-top: 20px;
+        padding-left: 13px;
+    }
+
+}
+
    footer{
     display: grid;
     grid-area: footer;
@@ -310,7 +321,6 @@ body{
         border: 0px;
         border-radius: 5px;
         box-shadow: 0px 1px 1px 1px #535252;
-
     }
     button{
         color: black;
@@ -451,3 +461,5 @@ body{
         }
 
     }
+    @import "responsive";
+ 

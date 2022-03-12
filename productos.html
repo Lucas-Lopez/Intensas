@@ -6,6 +6,20 @@
     <meta name="viewport"               content="width=device-width, initial-scale=1.0">
     <meta name="description"            content="Tienda de ropa">
     <meta name="keywords"               content="tienda, ropa, pantalones, remeras">
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"> 
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  
+    <link href="css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/destino.css">
     <link rel="icon" href="img/favicon.png" type="image/x-icon"> 
@@ -13,7 +27,7 @@
     <title>Productos</title>
 </head>
 
-<body id="grid">
+<body id="gridProductos">
   <header class="gridHeader">
       
     <nav role="navigation" class="hamburguer" >
@@ -41,13 +55,110 @@
         </form>
     </section>
     <section class="perfil">
-      <a href="perfil.html" class="a">  <i class="fa-solid fa-user fa-5x"></i> </a>
+      <a href="perfil.html" class="a">  <i class="fa-solid fa-user fa-4x"></i> </a>
     </section>
     <section class="carrito">
-      <a href="carrito.html"> <i class="fa-solid fa-cart-shopping fa-5x"></i> </a>
+      <a href="carrito.html"> <i class="fa-solid fa-cart-shopping fa-4x"></i> </a>
     </section>
-</header>
-    <section class="productos">
+  </header>
+  <div id="sidebar">
+    <!-- Price Start -->
+    <div class="border-bottom mb-4 pb-4">
+        <h5 class="font-weight-semi-bold mb-4">Filtrar por precio</h5>
+        <form>
+            <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                <input type="checkbox" class="custom-control-input" checked id="price-all">
+                <label class="custom-control-label" for="price-all">Todo</label>
+            </div>
+            <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                <input type="checkbox" class="custom-control-input" id="price-1">
+                <label class="custom-control-label" for="price-1">$0 - $700</label>
+            </div>
+            <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                <input type="checkbox" class="custom-control-input" id="price-2">
+                <label class="custom-control-label" for="price-2">$700 - $1500</label>
+            </div>
+            <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                <input type="checkbox" class="custom-control-input" id="price-3">
+                <label class="custom-control-label" for="price-3">$1500 - $2000</label>
+            </div>
+            <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                <input type="checkbox" class="custom-control-input" id="price-4">
+                <label class="custom-control-label" for="price-4">$2000 - $3000</label>
+            </div>
+            <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between">
+                <input type="checkbox" class="custom-control-input" id="price-5">
+                <label class="custom-control-label" for="price-5">$3000 - $6000</label>
+            </div>
+        </form>
+    </div>
+    <!-- Price End -->
+    
+    <!-- Color Start -->
+    <div class="border-bottom mb-4 pb-4">
+        <h5 class="font-weight-semi-bold mb-4">Filtrar por color</h5>
+        <form>
+            <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                <input type="checkbox" class="custom-control-input" checked id="color-all">
+                <label class="custom-control-label" for="price-all">Todo</label>
+            </div>
+            <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                <input type="checkbox" class="custom-control-input" id="color-1">
+                <label class="custom-control-label" for="color-1">Negro</label>
+            </div>
+            <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                <input type="checkbox" class="custom-control-input" id="color-2">
+                <label class="custom-control-label" for="color-2">Blanco</label>
+            </div>
+            <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                <input type="checkbox" class="custom-control-input" id="color-3">
+                <label class="custom-control-label" for="color-3">Rojo</label>
+            </div>
+            <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                <input type="checkbox" class="custom-control-input" id="color-4">
+                <label class="custom-control-label" for="color-4">Azul</label>
+            </div>
+            <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between">
+                <input type="checkbox" class="custom-control-input" id="color-5">
+                <label class="custom-control-label" for="color-5">Verde</label>
+            </div>
+        </form>
+    </div>
+    <!-- Color End -->
+
+    <!-- Size Start -->
+    <div class="mb-5">
+        <h5 class="font-weight-semi-bold mb-4">Filtrar por tamaño</h5>
+        <form>
+            <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                <input type="checkbox" class="custom-control-input" checked id="size-all">
+                <label class="custom-control-label" for="size-all">Todo</label>
+            </div>
+            <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                <input type="checkbox" class="custom-control-input" id="size-1">
+                <label class="custom-control-label" for="size-1">XS</label>
+            </div>
+            <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                <input type="checkbox" class="custom-control-input" id="size-2">
+                <label class="custom-control-label" for="size-2">S</label>
+            </div>
+            <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                <input type="checkbox" class="custom-control-input" id="size-3">
+                <label class="custom-control-label" for="size-3">M</label>
+            </div>
+            <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                <input type="checkbox" class="custom-control-input" id="size-4">
+                <label class="custom-control-label" for="size-4">L</label>
+            </div>
+            <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between">
+                <input type="checkbox" class="custom-control-input" id="size-5">
+                <label class="custom-control-label" for="size-5">XL</label>
+            </div>
+        </form>
+    </div>
+    <!-- Size End -->
+  </div>
+  <section class="productos">
         <div class="card">
           <img src="img/producto1.jpeg" class="card-img-top" alt="Producto 1">
           <div class="card-body">
@@ -111,9 +222,9 @@
                       <a href="#" class="btn btn-primary">comprar</a>
                     </div>
                   </div> 
-                </section>
+  </section>
   
-                <footer class="gridFooter"> 
+  <footer class="gridFooter"> 
                   <div class="logo">
                    <a href="index.html"> <img src="img/logo.png" alt="" class="imgLogo"> </a>
                   </div>       
@@ -144,8 +255,8 @@
                       <a href="carrito.html"><li>Carrito</li></a>
                       <a href="perfil.html"><li>Perfil</li></a>
                   </ul>
-                </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
 </body>
 

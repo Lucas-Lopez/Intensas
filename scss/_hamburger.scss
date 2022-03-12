@@ -3,7 +3,7 @@
  {
    display: block;
    position: relative;
-   left: 35px;
+   left: 26%;
    
    z-index: 1;
    
@@ -25,7 +25,7 @@
   text-decoration: underline;
   background-color: #e374745c;
   border-radius: 10px;
-  width: 98px;
+  width: 100%;
   height: 54px;
   position: relative;
  }
@@ -59,7 +59,7 @@
    margin-bottom: 5px;
    position: relative;
    z-index: 1;
-   text-shadow: 0px 2px 3px #000000;
+   text-shadow: 0px 0px 2px #ededed;
  }
  
  #menuToggle span:first-child
@@ -78,7 +78,7 @@
   */
  #menuToggle input:checked ~ i
  {
-  color: #ededed;
+  color: #000000;
  }
  
  /*

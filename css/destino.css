@@ -3,57 +3,10 @@
   margin: 0;
   padding: 0; }
 
-@keyframes caida {
-  0% {
-    transform: translateY(-500px); }
-  100% {
-    transform: translateY(0px); } }
-
-/* RESPONSIVE */
-/* Smartphone */
-@media (max-width: 481px) {
-  #grid {
-    display: grid;
-    grid-template-areas: " header" " nav" " propaganda" " productos" " footer";
-    grid-template-columns: 1fr 8fr; }
-  section#productos {
-    justify-content: center; }
-  nav {
-    position: relative; }
-  .menu {
-    font-size: 15px; }
-  section#busqueda {
-    display: none; }
-  #carouselExampleIndicators {
-    display: none; }
-  .gridHeader {
-    grid-area: header;
-    border: solid black 1px;
-    display: grid;
-    grid-template-areas: "logo buscar perfil";
-    justify-content: space-between;
-    width: 100%; }
-  .imgLogo {
-    height: 3em; } }
-
-/* TABLET */
-@media (min-width: 482px) and (max-width: 768px) {
-  nav {
-    position: static; }
-  .menu {
-    font-size: 20px; }
-  section#productos {
-    justify-content: center; }
-  section#busqueda {
-    display: none; }
-  #carouselExampleIndicators {
-    display: none; } }
-
-/* TABLET APAISADA */
 #menuToggle {
   display: block;
   position: relative;
-  left: 35px;
+  left: 26%;
   z-index: 1;
   -webkit-user-select: none;
   user-select: none; }
@@ -68,7 +21,7 @@
   text-decoration: underline;
   background-color: #e374745c;
   border-radius: 10px;
-  width: 98px;
+  width: 100%;
   height: 54px;
   position: relative; }
 
@@ -96,7 +49,7 @@
   margin-bottom: 5px;
   position: relative;
   z-index: 1;
-  text-shadow: 0px 2px 3px #000000; }
+  text-shadow: 0px 0px 2px #ededed; }
 
 #menuToggle span:first-child {
   transform-origin: 0% 0%; }
@@ -109,7 +62,7 @@
   * into a crossmark.
   */
 #menuToggle input:checked ~ i {
-  color: #ededed; }
+  color: #000000; }
 
 /*
   * But let's hide the middle one.
@@ -164,9 +117,7 @@ body {
     top: 1px;
     z-index: 3; }
     body .gridHeader .imgLogo {
-      height: 5em;
-      animation-name: caida;
-      animation-duration: 2s; }
+      height: 5em; }
     body .gridHeader .hamburguer {
       grid-area: hamburguer; }
     body .gridHeader .logo {
@@ -216,7 +167,7 @@ body {
     flex-direction: row;
     align-items: center;
     align-content: space-around;
-    justify-content: space-between; }
+    justify-content: space-around; }
   body #gridCarrito {
     display: grid;
     grid-template-areas: "header" "nav" "compra" "footer"; }
@@ -307,6 +258,15 @@ body {
       color: black;
       background-color: #ffdde4;
       margin: 5px; }
+
+body#gridProductos {
+  display: grid;
+  grid-template-areas: "header header" "sidebar productos" "footer footer";
+  grid-template-columns: 1fr 5fr; }
+  body#gridProductos div#sidebar {
+    grid-area: sidebar;
+    margin-top: 20px;
+    padding-left: 13px; }
 
 footer {
   display: grid;
@@ -466,3 +426,84 @@ footer {
       .gridCompra .finCompra .wrapBotones button.finalizar:hover {
         background-color: #7e1c30;
         text-decoration: underline; }
+
+/* RESPONSIVE */
+/* Smartphone */
+@media (max-width: 481px) {
+  body section.productos {
+    justify-content: center; }
+  body .gridHeader {
+    grid-template-columns: 0.7fr 1fr 3fr 1fr 1fr; }
+    body .gridHeader .imgLogo {
+      height: 3em; }
+    body .gridHeader .fa-4x {
+      font-size: 2em; }
+    body .gridHeader .buscar .buscarFlex .busqueda {
+      height: 2em; }
+    body .gridHeader .buscar .buscarFlex button {
+      height: 2em; }
+      body .gridHeader .buscar .buscarFlex button i {
+        font-size: 1em; }
+  #gridContacto {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-content: center;
+    flex-wrap: nowrap;
+    justify-content: center; }
+    #gridContacto .gridRedes .mensaje {
+      font-size: 19px; }
+    #gridContacto .gridRedes span.logosRedes {
+      display: flex;
+      flex-direction: row;
+      align-content: space-between; }
+      #gridContacto .gridRedes span.logosRedes .textoRedes {
+        font-size: 25px;
+        padding: 0px; }
+    #gridContacto .formContacto {
+      grid-area: form;
+      display: flex;
+      align-items: center;
+      margin-left: 10px;
+      flex-direction: column;
+      margin-top: 12px; }
+    #gridContacto iframe {
+      margin-top: 30px; }
+  .gridPerfil .wrapDatos {
+    width: 86%; }
+  .gridCompra .compra {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 2em;
+    padding: 0; }
+    .gridCompra .compra .texto {
+      display: flex;
+      width: 20%;
+      font-size: 16px;
+      align-items: center;
+      justify-content: center;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-content: center;
+      padding-left: 1em; }
+  .gridCompra .finCompra {
+    font-size: 10px;
+    margin: 0; }
+    .gridCompra .finCompra .wrapCompra .final {
+      font-size: 16px; }
+  footer {
+    position: absolute; }
+    footer .imgLogo {
+      height: 4em; }
+    footer .redes {
+      display: flex;
+      flex-wrap: wrap;
+      margin-left: 1.5em; }
+      footer .redes i {
+        font-size: 2em; }
+    footer .formulario {
+      margin-left: 0px; }
+      footer .formulario input, footer .formulario select, footer .formulario optgroup, footer .formulario textarea {
+        width: 4em; }
+      footer .formulario .formWrap #message {
+        width: 9em; } }
